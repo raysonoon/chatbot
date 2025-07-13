@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message {
+    white-space: pre-wrap;
+    max-width: 100%;
+    overflow-x: auto;
+    background: #f8f8f8;
+    border-radius: 6px;
+    padding: 1em;
+    margin-bottom: 1em;
+    line-height: 1.5;
+    font-size: 1rem;
+
+    &.generating {
+        &::after {
+            content: '▋';
+            animation: fade-cursor ease-in-out 500ms infinite alternate;
+        }
+    }
+}
+
+@keyframes fade-cursor {
+    from {
+        opacity: 25%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
